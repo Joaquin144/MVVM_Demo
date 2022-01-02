@@ -1,16 +1,12 @@
-package com.vibhu.nitjsr.mvvmsampleapp.ui.auth;
+package com.vibhu.nitjsr.mvvmsampleapp.ui.auth
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.vibhu.nitjsr.mvvmsampleapp.R
 
-import android.os.Bundle;
-
-import com.vibhu.nitjsr.mvvmsampleapp.R;
-
-public class LoginActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+class LoginActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_login)
     }
 }
