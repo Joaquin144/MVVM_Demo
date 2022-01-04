@@ -17,6 +17,7 @@ interface MyApi {
     ): Call<ResponseBody>
 
     companion object{
+        //MyApi.invoke() will run automatically as soon as we write MyApi()  --> But why (Doubt!!!)
         operator fun invoke(): MyApi{
             return Retrofit.Builder()
                 .baseUrl("https://api.simplifiedcoding.in/course-apis/mvvm/")
