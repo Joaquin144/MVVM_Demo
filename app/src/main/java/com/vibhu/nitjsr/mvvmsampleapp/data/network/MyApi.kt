@@ -16,6 +16,7 @@ interface MyApi {
         @Field("password") password: String
     ): Call<ResponseBody>
 
+    //Doubt: Why are we using companin object inside an interface
     companion object{
         //MyApi.invoke() will run automatically as soon as we write MyApi()  --> But why (Doubt!!!)
         operator fun invoke(): MyApi{

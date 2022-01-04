@@ -2,6 +2,7 @@ package com.vibhu.nitjsr.mvvmsampleapp.ui.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
@@ -24,19 +25,22 @@ class LoginActivity : AppCompatActivity() , AuthListener {
     }
 
     override fun onStarted() {
-        //progress_bar.visibility = View.VISIBLE   ->  chote log
-        progress_bar.show() // --> bade log
+        Log.d("####","LoginActivity ka onStarted says hello")
+        //progress_bar.visibility = View.VISIBLE   ->  not so better way
+        progress_bar.show() // --> better way to use extension function
     }
 
     override fun onSuccess(loginResponse: LiveData<String>) {
+        Log.d("####","LoginActivity ka onSuccess says hello")
         loginResponse.observe(this, Observer{
             toast(it);//jo observer hai woh "it" naam ka variavble return karega
-            progress_bar.hide() // -->  bade log
+            progress_bar.hide() // -->  better way
         })
     }
 
     override fun onFailure(message: String) {
-        progress_bar.hide() //  --> bade log
+        Log.d("####","LoginActivity ka onFailure says hello")
+        progress_bar.hide() //  --> better way
         toast("Login Failure  : $message")
     }
 }
