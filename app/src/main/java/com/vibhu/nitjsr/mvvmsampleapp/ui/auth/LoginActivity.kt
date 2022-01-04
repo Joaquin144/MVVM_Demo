@@ -29,9 +29,9 @@ class LoginActivity : AppCompatActivity() , AuthListener {
     }
 
     override fun onSuccess(loginResponse: LiveData<String>) {
-        progress_bar.hide() // -->  bade log
         loginResponse.observe(this, Observer{
             toast(it);//jo observer hai woh "it" naam ka variavble return karega
+            progress_bar.hide() // -->  bade log
         })
     }
 
